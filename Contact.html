@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Cakes & Mini Cakes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+   
+<nav class="navbar">
+
+    <div class="logo">
+        <h1>♡ Sweet Love Bakery ♡</h1>
+    </div>
+
+    <div class="nav-container">
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="Shop.html">Shop</a>
+            <a href="Order.html">Order</a>
+
+            <a href="Contact.html" class="active">Contact</a>
+            <a href="About.html">About Us</a>
+            <a href="Blog.html">🛒</a>
+        </div>
+    </div>
+
+    <div class="menu-toggle" id="mobile-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+</nav>    
+</nav>
+<div class="contact-header">
+    <h1>CONTACT US</h1>
+</div>
+<section class="contact-section">
+    <div class="contact-wrapper">
+        
+        <div class="contact-form-side">
+            <h2 class="form-title">have a specific request or question?</h2>
+            <form>
+                <div class="input-row">
+                    <input type="text" placeholder="NAME*" required>
+                    <input type="text" placeholder="SURNAME*" required>
+                </div>
+                <input type="email" placeholder="EMAIL ADDRESS*" required>
+                <input type="text" placeholder="CONTACT NUMBER">
+                <input type="text" placeholder="SUBJECT*">
+                <textarea placeholder="YOUR MESSAGE*" rows="5"></textarea>
+                
+                <div class="check-box-group">
+                    <input type="checkbox" id="terms">
+                    <label for="terms">I agree to receiving marketing email and understand the terms and conditions.</label>
+                </div>
+                
+                <button type="submit" class="black-submit-btn">submit</button>
+            </form>
+        </div>
+
+        <div class="contact-info-side">
+            <h2 class="info-title">GET IN TOUCH</h2>
+            <div class="contact-details">
+                <p>📞 09 123 456 789</p>
+                <p>📞 01 855 021 6</p>
+                <p>✉️ orders@sweetlovebakery.com</p>
+                <p>📍 No.123 ၊ U Chit Maung Road ၊ Thingangyun Township ၊ Yangon။</p>
+            </div>
+            
+            <div class="map-box">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d122197.89669528775!2d96.06403215234504!3d16.842263152018865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30c1949e223e196b%3A0x56fbd271f8080541!2sYangon!5e0!3m2!1sen!2smm!4v1714316200000!5m2!1sen!2smm" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+
+    </div>
+</section>
+    
+    <footer class="footer">
+    <div class="footer-container">
+        <div class="footer-box">
+            <h2 class="footer-logo">♡ Sweet Love ♡</h2>
+            <p>Crafting sweetness for your every special moment. We can't wait to bake something beautiful for you—step inside and find your perfect treat!</p>
+        </div>
+
+        <div class="footer-box">
+            <h3>Quick Links</h3>
+            <ul>
+               <li><a href="index.html">Home</a></li>
+                <li><a href="Shop.html">Shop</a></li>
+                <li><a href="Order.html">Order</a></li>
+                <li><a href="About.html">About Us</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+                <li><a href="Blog.html">Blog</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-box">
+            <h3>Contact Us</h3>
+            <p>📍 No.123 ၊ U Chit Maung Road ၊ Thingangyun Township ၊ Yangon။</p>
+            <p>📞 09 123 456 789</p>
+            <p>📞 01 855 021 6</p>
+            <p>✉️ info@sweetlovebakery.com</p>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <p>&copy; 2024 Sweet Love Bakery. All Rights Reserved.</p>
+    </div>
+</footer>
+<script>
+    const menu = document.querySelector('#mobile-menu');
+    const navLinks = document.querySelectorAll('.nav-links');
+
+    menu.addEventListener('click', function() {
+        navLinks.forEach(link => {
+            link.classList.toggle('active');
+        });
+    });
+</script>
+</body>
+</html>
