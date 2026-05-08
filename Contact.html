@@ -9,20 +9,43 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-   
-<nav class="navbar">
-
+     <nav class="navbar">
     <div class="logo">
-        <h1>♡ Sweet Love Bakery ♡</h1>
-    </div>
+       <img src="img/SweetLove-Logo.jpg" alt="Logo">
+    <span>Sweet Love Bakery</span>
+</div>
 
-    <div class="nav-container">
+     <div class="nav-container">
         <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="Shop.html">Shop</a>
+            <a href="index.html" class="active">Home</a>
+            <div class="dropdown">
+    <a href="#" onclick="toggleShop(event)" class="dropbtn">Shop ▾</a>
+    <div id="shopItems" class="dropdown-content">
+        <a href="#">Promos <span></span></a>
+        <div class="has-sub">
+  <a href="#">Cakes ›</a>
+
+  <ul class="side-submenu">
+    <li><a href="Blueberry Cake.html">Blueberry Cakes </a></li>
+    <li><a href="Cheesecake.html">Cheese Cakes </a></li>
+    <li><a href="Chocolate Cake.html">Chocolate Cakes </a></li>
+    <li><a href="Green Cake.html">Green Cakes </a></li>
+    <li><a href="Mango Cake.html">Mango Cakes </a></li>
+    <li><a href="Mushroom Cake.html">Mushroom Cakes </a></li>
+    <li><a href="Orange Cake.html">Orange Cakes </a></li>
+    <li><a href="Pineapple Cake.html">Pineapple Cakes </a></li>
+    <li><a href="Strawberry Cake.html">Strawberry Cakes </a></li>
+</ul>
+</div>
+        <a href="Wedding Cake.html">Wedding Cakes </a>
+        <a href="#">Sweet Treats <span></span></a>
+        <a href="#">Dietary Bakes <span></span></a>
+        <a href="Accessories.html">Accessories <span></span></a>
+    </div>
+</div>
             <a href="Order.html">Order</a>
 
-            <a href="Contact.html" class="active">Contact</a>
+            <a href="Contact.html">Contact</a>
             <a href="About.html">About Us</a>
             <a href="Blog.html">🛒</a>
         </div>
@@ -36,9 +59,11 @@
 
 </nav>    
 </nav>
-<div class="contact-header">
-    <h1>CONTACT US</h1>
-</div>
+<section class="page-banner">
+    <div class="banner-box">
+        <h1>Contact Us</h1>
+</section>
+    
 <section class="contact-section">
     <div class="contact-wrapper">
         
@@ -68,7 +93,7 @@
             <div class="contact-details">
                 <p>📞 09 123 456 789</p>
                 <p>📞 01 855 021 6</p>
-                <p>✉️ orders@sweetlovebakery.com</p>
+                <p>✉️ sweetlovebakery7@gmail.com</p>
                 <p>📍 No.123 ၊ U Chit Maung Road ၊ Thingangyun Township ၊ Yangon။</p>
             </div>
             
@@ -104,16 +129,16 @@
             <p>📍 No.123 ၊ U Chit Maung Road ၊ Thingangyun Township ၊ Yangon။</p>
             <p>📞 09 123 456 789</p>
             <p>📞 01 855 021 6</p>
-            <p>✉️ info@sweetlovebakery.com</p>
+            <p>✉️ sweetlovebakery7@gmail.com</p>
         </div>
     </div>
     
     <div class="footer-bottom">
-        <p>&copy; 2024 Sweet Love Bakery. All Rights Reserved.</p>
+        <p>&copy; © 2026 Group-3 Paradise. All rights reserved.</p>
     </div>
 </footer>
 <script>
-    const menu = document.querySelector('#mobile-menu');
+     const menu = document.querySelector('#mobile-menu');
     const navLinks = document.querySelectorAll('.nav-links');
 
     menu.addEventListener('click', function() {
@@ -121,6 +146,10 @@
             link.classList.toggle('active');
         });
     });
+    function toggleShop(e) {
+    e.preventDefault();
+    document.getElementById("shopItems").classList.toggle("show-dropdown");
+}
 </script>
 </body>
 </html>

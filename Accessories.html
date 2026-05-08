@@ -11,10 +11,10 @@
 <body>
    
 <nav class="navbar">
-
     <div class="logo">
-        <h1>♡ Sweet Love Bakery ♡</h1>
-    </div>
+       <img src="img/SweetLove-Logo.jpg" alt="Logo">
+    <span>Sweet Love Bakery</span>
+</div>
 
     <div class="nav-container">
         <div class="nav-links">
@@ -518,16 +518,16 @@
             <p>📍 No.123 ၊ U Chit Maung Road ၊ Thingangyun Township ၊ Yangon။</p>
             <p>📞 09 123 456 789</p>
             <p>📞 01 855 021 6</p>
-            <p>✉️ info@sweetlovebakery.com</p>
+            <p>✉️sweetlovebakery7@gmail.com</p>
         </div>
     </div>
     
     <div class="footer-bottom">
-        <p>&copy; 2024 Sweet Love Bakery. All Rights Reserved.</p>
+        <p>&copy; 2026 Group-3 Paradise. All rights reserved</p>
     </div>
 </footer>
 <script>
-    const menu = document.querySelector('#mobile-menu');
+     const menu = document.querySelector('#mobile-menu');
     const navLinks = document.querySelectorAll('.nav-links');
 
     menu.addEventListener('click', function() {
@@ -535,6 +535,10 @@
             link.classList.toggle('active');
         });
     });
+    function toggleShop(e) {
+    e.preventDefault();
+    document.getElementById("shopItems").classList.toggle("show-dropdown");
+}
 </script>
 </body>
 </html>
