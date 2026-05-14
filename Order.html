@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Cakes & Mini Cakes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+   
+<nav class="navbar">
+    <div class="logo">
+       <img src="/img/SweetLove-Logo.jpg" alt="Logo">
+    <span>Sweet Love Bakery</span>
+</div>
+
+    <div class="nav-container">
+        <div class="nav-links">
+            <a href="index.html" class="active">Home</a>
+            <div class="dropdown">
+    <a href="#" onclick="toggleShop(event)" class="dropbtn">Shop ▾</a>
+    <div id="shopItems" class="dropdown-content">
+        <div class="has-sub">
+   <a href="#">Cakes ›</a>
+  <ul class="side-submenu">
+    <li><a href="Blueberrycake.html">Blueberry Cakes </a></li>
+    <li><a href="Cheesecake.html">Cheese Cakes </a></li>
+    <li><a href="Chocolatecake.html">Chocolate Cakes </a></li>
+    <li><a href="Greencake.html">Green Cakes </a></li>
+    <li><a href="Mangocake.html">Mango Cakes </a></li>
+    <li><a href="Mushroomcake.html">Mushroom Cakes </a></li>
+    <li><a href="Orangecake.html">Orange Cakes </a></li>
+    <li><a href="Pineapplecake.html">Pineapple Cakes </a></li>
+    <li><a href="Strawberrycake.html">Strawberry Cakes </a></li>
+</ul>
+        <a href="Wedding Cake.html">Wedding Cakes </a>
+        <a href="#">Sweet Treats <span></span></a>
+        <a href="#">Dietary Bakes <span></span></a>
+        <a href="Accessories.html">Accessories <span></span></a>
+    </div>
+</div>
+            <a href="Order.html">Order</a>
+
+            <a href="Contact.html">Contact</a>
+            <a href="About.html">About Us</a>
+            <a href="Cart.html" class="active" style="position: relative;">🛒 <span id="cart-count">0</span></a>
+        </div>
+    </div>
+    <div class="menu-toggle" id="mobile-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+</nav>
+    
+</nav>
+
+<section class="order-page-wrapper">
+    <div class="order-container-grid">
+        
+        <div class="billing-details">
+            <h2>Billing Address</h2>
+            <form action="https://formspree.io/f/သင့်ရဲ့IDလေး" method="POST" id="bakeryOrderForm">
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" name="customer_name" placeholder="Please enter full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" name="phone" placeholder="09........." required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Detailed Address</label>
+                    <textarea name="address" rows="3" placeholder="House No., Street, Ward, Township" required></textarea>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Delivery Date</label>
+                        <input type="date" name="delivery_date" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Delivery Time</label>
+                        <input type="time" name="delivery_time" required>
+                    </div>
+                </div>
+
+                <div class="payment-methods">
+                    <h3>Payment Method</h3>
+                    <div class="payment-options">
+                        <label class="pay-item">
+                            <input type="radio" name="payment" value="Cash On Delivery" checked>
+                            <span>Cash On Delivery</span>
+                        </label>
+                        <label class="pay-item">
+                            <input type="radio" name="payment" value="KPay">
+                            <span>KPay</span>
+                        </label>
+                        <label class="pay-item">
+                            <input type="radio" name="payment" value="Wave Money">
+                            <span>Wave Money</span>
+                        </label>
+                        <label class="pay-item">
+                            <input type="radio" name="payment" value="Mobile Banking">
+                            <span>Mobile Banking (CB, KBZ, AYA)</span>
+                        </label>
+                    </div>
+                    <p class="payment-note">* Once you have completed the payment via KPay, WavePay, or Bank Transfer, please send us a screenshot of the
+                         transfer confirmation. Thank you for your cooperation!</p>
+                </div>
+
+                <div class="form-group">
+                    <label>Notes (Optional)</label>
+                    <textarea name="notes" rows="2" placeholder="Any Speccial Requests?"></textarea>
+                </div>
+
+                <button type="submit" class="place-order-btn">PLACE ORDER NOW</button>
+            </form>
+        </div>
+
+        <div class="order-summary-box">
+            <h3>Total Order</h3>
+            <div class="summary-item">
+                <span>Product Total</span>
+                <span id="subtotal">Calculated from Cart</span>
+            </div>
+            <div class="summary-item">
+                <span>Shipping Fee</span>
+                <span>Depends on Location</span>
+            </div>
+            <hr>
+            <div class="summary-total">
+                <span>Grand Total</span>
+                <span id="grand-total">Total Ks</span>
+            </div>
+
+</section>
+    
+    <footer class="footer">
+    <div class="footer-container">
+        <div class="footer-box">
+            <h2 class="footer-logo">♡ Sweet Love ♡</h2>
+            <p>Crafting sweetness for your every special moment. We can't wait to bake something beautiful for you—step inside and find your perfect treat!</p>
+        </div>
+
+         <div class="footer-box">
+            <h3>Quick Links</h3>
+            <ul>
+               <li><a href="index.html">Home</a></li>
+                <li><a href="Order.html">Order</a></li>
+                <li><a href="About.html">About Us</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+                <li><a href="Cart.html">Cart</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-box">
+            <h3>Contact Us</h3>
+            <p>📍 No.123 ၊ U Chit Maung Road ၊ Thingangyun Township ၊ Yangon။</p>
+            <p>📞 09 123 456 789</p>
+            <p>📞 01 855 021 6</p>
+            <p>✉️ sweetlovebakery7@gmail.com</p>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <p>&copy; 2026 Group-3 Paradise. All rights reserved.</p>
+    </div>
+</footer>
+<script>
+    const menu = document.querySelector('#mobile-menu');
+    const navLinks = document.querySelectorAll('.nav-links');
+
+    menu.addEventListener('click', function() {
+        navLinks.forEach(link => {
+            link.classList.toggle('active');
+        });
+    });
+    function toggleShop(e) {
+    e.preventDefault();
+    document.getElementById("shopItems").classList.toggle("show-dropdown");
+}
+    
+</script>
+<script src="cart.js"></script>
+</body>
+</html>

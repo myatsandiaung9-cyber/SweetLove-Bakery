@@ -1,74 +1,91 @@
-// 1. Function to add item to the cart
-function addToCart(pName, pPrice, pImg) {
-    // Get existing cart data from localStorage or create an empty array
-    let cart = JSON.parse(localStorage.getItem('myCart')) || [];
+let cart = JSON.parse(localStorage.getItem('bakery_cart')) || [];
 
-    // Check if the item already exists in the cart
-    let itemIndex = cart.findIndex(item => item.name === pName);
-
-    if (itemIndex > -1) {
-        // If exists, increase the quantity
-        cart[itemIndex].quantity += 1;
-    } else {
-        // If new, push a new product object
-        cart.push({
-            name: pName,
-            price: pPrice,
-            image: pImg,
-            quantity: 1
-        });
+// 2. Global function to update ONLY the badge (Run this on every page)
+function updateGlobalBadge() {
+    const badge = document.getElementById('cart-count');
+    if (badge) {
+        const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+        badge.innerText = totalItems;
     }
-
-    // Save the updated cart back to localStorage
-    localStorage.setItem('myCart', JSON.stringify(cart));
-    
-    // Notification
-    alert(pName + " has been added to your cart!");
 }
 
-// 2. Function to display items in Blog.html (Cart Page)
+// 3. Function to display items (Only runs on the Cart page)
 function displayCart() {
-    let cart = JSON.parse(localStorage.getItem('myCart')) || [];
-    let displayArea = document.getElementById('cart-items-container');
+    const container = document.getElementById('cart-items-container');
+    const totalElement = document.getElementById('cart-total');
+    
+    // Always update the badge first
+    updateGlobalBadge();
 
-    if (!displayArea) return;
+    if (!container) return; // Stop here if we aren't on the cart page
+
+    container.innerHTML = "";
+    let total = 0;
 
     if (cart.length === 0) {
-        displayArea.innerHTML = "<h3 style='text-align:center;'>Your cart is empty.</h3>";
-        return;
+        container.innerHTML = "<p>Your cart is empty.</p>";
+    } else {
+        cart.forEach((item, index) => {
+            total += item.price * item.quantity;
+            container.innerHTML += `
+                <div class="cart-item-row">
+                    <div class="item-details">
+                        <img src="${item.image}" alt="${item.name}" class="cart-item-img">
+                        <div class="item-text">
+                            <h4 class="item-name">${item.name}</h4>
+                            <p class="item-price">$${item.price}</p>
+                        </div>
+                    </div>
+                    <div class="item-actions">
+                        <div class="quantity-controls">
+                            <button onclick="updateQuantity(${index}, -1)">-</button>
+                            <span class="qty-num">${item.quantity}</span>
+                            <button onclick="updateQuantity(${index}, 1)">+</button>
+                        </div>
+                        <button class="remove-btn" onclick="removeItem(${index})">
+                            <i class="fa-solid fa-trash"></i>
+                        </button>
+                    </div>
+                </div>`;
+        });
     }
-
-    displayArea.innerHTML = "";
-
-    cart.forEach((item, index) => {
-        displayArea.innerHTML += `
-            <div class="cart-item" style="display: flex; align-items: center; border-bottom: 1px solid #eee; padding: 15px;">
-                <img src="${item.image}" width="80" height="80" style="object-fit: cover; border-radius: 8px; margin-right: 20px;">
-                
-                <div style="flex: 1;">
-                    <h4 style="margin: 0;">${item.name}</h4>
-                    <p style="margin: 5px 0;">Price: ${item.price.toLocaleString()} Ks</p>
-                    <p style="margin: 0;">Qty: <b>${item.quantity}</b></p>
-                </div>
-
-                <div style="text-align: right;">
-                    <p style="font-weight: bold; color: #e91e63;">
-                        Total: ${(item.price * item.quantity).toLocaleString()} Ks
-                    </p>
-                    <button onclick="removeFromCart(${index})"
-                        style="color: red; cursor: pointer; border: none; background: none; text-decoration: underline;">
-                        Remove
-                    </button>
-                </div>
-            </div>
-        `;
-    });
+    if(totalElement) totalElement.innerText = total.toFixed(2);
 }
 
-// 3. Function to remove an item from the cart
-function removeFromCart(index) {
-    let cart = JSON.parse(localStorage.getItem('myCart')) || [];
+// 4. Add to Cart (Used in Blueberrycake.html, etc.)
+window.addToCart = function(name, price, image) {
+    const existingItem = cart.find(item => item.name === name);
+    if (existingItem) {
+        existingItem.quantity += 1;
+    } else {
+        cart.push({ name, price, image, quantity: 1 });
+    }
+    
+    localStorage.setItem('bakery_cart', JSON.stringify(cart));
+    updateGlobalBadge(); // This ensures the badge updates immediately on the product page
+    alert(name + " added to cart!");
+};
+
+// 5. Change Quantity
+window.updateQuantity = function(index, change) {
+    cart[index].quantity += change;
+    if (cart[index].quantity <= 0) {
+        removeItem(index);
+    } else {
+        localStorage.setItem('bakery_cart', JSON.stringify(cart));
+        displayCart();
+    }
+};
+
+// 6. Remove Item
+window.removeItem = function(index) {
     cart.splice(index, 1);
-    localStorage.setItem('myCart', JSON.stringify(cart));
-    displayCart(); // Refresh the display
-}
+    localStorage.setItem('bakery_cart', JSON.stringify(cart));
+    displayCart();
+};
+
+// RUN ON LOAD
+document.addEventListener('DOMContentLoaded', () => {
+    displayCart(); // Handles both the cart list and the global badge
+    updateGlobalBadge(); // Secondary check to ensure badge fills on every page load
+});

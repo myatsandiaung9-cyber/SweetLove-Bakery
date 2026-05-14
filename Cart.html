@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-   <nav class="navbar">
+   
+<nav class="navbar">
     <div class="logo">
        <img src="img/SweetLove-Logo.jpg" alt="Logo">
     <span>Sweet Love Bakery</span>
@@ -18,25 +19,23 @@
     <div class="nav-container">
         <div class="nav-links">
             <a href="index.html">Home</a>
-            <div class="dropdown">
-    <a href="javascript:void(0)" onclick="toggleShop()" class="dropbtn active">Shop ▾</a>
+           <div class="dropdown">
+    <a href="#" onclick="toggleShop(event)" class="dropbtn">Shop ▾</a>
     <div id="shopItems" class="dropdown-content">
-        <a href="#">Promos <span></span></a>
-        <li class="has-sub">
-  <a href="#">Cakes ›</a>
-
+        <div class="has-sub">
+   <a href="#">Cakes ›</a>
   <ul class="side-submenu">
-    <li><a href="Blueberry Cake.html">Blueberry Cakes </a></li>
+    <li><a href="Blueberrycake.html">Blueberry Cakes </a></li>
     <li><a href="Cheesecake.html">Cheese Cakes </a></li>
-    <li><a href="Chocolate Cake.html">Chocolate Cakes </a></li>
-    <li><a href="Green Cake.html">Green Cakes </a></li>
-    <li><a href="Mango Cake.html">Mango Cakes </a></li>
-    <li><a href="Mushroom Cake.html">Mushroom Cakes </a></li>
-    <li><a href="Orange Cake.html">Orange Cakes </a></li>
-    <li><a href="Pineapple Cake.html">Pineapple Cakes </a></li>
-    <li><a href="Strawberry Cake.html">Strawberry Cakes </a></li>
+    <li><a href="Chocolatecake.html">Chocolate Cakes </a></li>
+    <li><a href="Greencake.html">Green Cakes </a></li>
+    <li><a href="Mangocake.html">Mango Cakes </a></li>
+    <li><a href="Mushroomcake.html">Mushroom Cakes </a></li>
+    <li><a href="Orangecake.html">Orange Cakes </a></li>
+    <li><a href="Pineapplecake.html">Pineapple Cakes </a></li>
+    <li><a href="Strawberrycake.html">Strawberry Cakes </a></li>
 </ul>
-</li>
+</div>
         <a href="Wedding Cake.html">Wedding Cakes </a>
         <a href="#">Sweet Treats <span></span></a>
         <a href="#">Dietary Bakes <span></span></a>
@@ -47,7 +46,7 @@
 
             <a href="Contact.html">Contact</a>
             <a href="About.html">About Us</a>
-            <a href="Blog.html">🛒</a>
+            <a href="Cart.html" class="active" style="position: relative;">🛒 <span id="cart-count">0</span></a>
         </div>
     </div>
 
@@ -60,8 +59,17 @@
 </nav>
     
 </nav>
-
+<div class="cart-wrapper">
+    <h1>Your Shopping Cart</h1>
+    <div id="cart-items-container">
+        <!-- Items will be injected here by cart.js -->
+    </div> 
+    
+    <div class="cart-summary">
+        <h3>Total: $<span id="cart-total">0.00</span></h3>
+        <a href="order.html" class="checkout-btn">PROCEED TO ORDER</a>
     </div>
+</div>
     
     <footer class="footer">
     <div class="footer-container">
@@ -70,15 +78,14 @@
             <p>Crafting sweetness for your every special moment. We can't wait to bake something beautiful for you—step inside and find your perfect treat!</p>
         </div>
 
-        <div class="footer-box">
+         <div class="footer-box">
             <h3>Quick Links</h3>
             <ul>
                <li><a href="index.html">Home</a></li>
-                <li><a href="Shop.html">Shop</a></li>
                 <li><a href="Order.html">Order</a></li>
                 <li><a href="About.html">About Us</a></li>
                 <li><a href="Contact.html">Contact</a></li>
-                <li><a href="Blog.html">Blog</a></li>
+                <li><a href="Cart.html">Cart</a></li>
             </ul>
         </div>
 
@@ -87,15 +94,23 @@
             <p>📍 No.123 ၊ U Chit Maung Road ၊ Thingangyun Township ၊ Yangon။</p>
             <p>📞 09 123 456 789</p>
             <p>📞 01 855 021 6</p>
-            <p>✉️ sweetlovebakery7@gmail.com</p>
+            <p>✉️ sweetlovebakery7@gmail.com
         </div>
     </div>
     
     <div class="footer-bottom">
-        <p>&copy;© 2026 Group-3 Paradise. All rights reserved.</p>
+        <p>&copy; 2026 Group-3 Paradise. All rights reserved.</p>
     </div>
 </footer>
+<script src="cart.js"></script>
+
 <script>
+   
+    window.onload = function() {
+        if (typeof displayCart === "function") {
+            displayCart();
+        }
+    };
      const menu = document.querySelector('#mobile-menu');
     const navLinks = document.querySelectorAll('.nav-links');
 
@@ -108,19 +123,7 @@
     e.preventDefault();
     document.getElementById("shopItems").classList.toggle("show-dropdown");
 }
-document.querySelector(".dropbtn").addEventListener("click", function(e){
-    e.preventDefault();
-    document.querySelector(".dropdown-content").classList.toggle("show-dropdown");
-});
-
-document.querySelectorAll(".has-sub").forEach(item => {
-    item.addEventListener("click", function(){
-        this.classList.toggle("active");
-    });
-});
-
-    
 </script>
-
+<script src="cart.js"></script>
 </body>
 </html>

@@ -22,20 +22,19 @@
             <div class="dropdown">
     <a href="#" onclick="toggleShop(event)" class="dropbtn">Shop ▾</a>
     <div id="shopItems" class="dropdown-content">
-        <a href="#">Promos <span></span></a>
         <div class="has-sub">
-  <a href="#">Cakes ›</a>
-
+   <a href="#">Cakes ›</a>
+   
   <ul class="side-submenu">
-    <li><a href="Blueberry Cake.html">Blueberry Cakes </a></li>
+    <li><a href="Blueberrycake.html">Blueberry Cakes </a></li>
     <li><a href="Cheesecake.html">Cheese Cakes </a></li>
-    <li><a href="Chocolate Cake.html">Chocolate Cakes </a></li>
-    <li><a href="Green Cake.html">Green Cakes </a></li>
-    <li><a href="Mango Cake.html">Mango Cakes </a></li>
-    <li><a href="Mushroom Cake.html">Mushroom Cakes </a></li>
-    <li><a href="Orange Cake.html">Orange Cakes </a></li>
-    <li><a href="Pineapple Cake.html">Pineapple Cakes </a></li>
-    <li><a href="Strawberry Cake.html">Strawberry Cakes </a></li>
+    <li><a href="Chocolatecake.html">Chocolate Cakes </a></li>
+    <li><a href="Greencake.html">Green Cakes </a></li>
+    <li><a href="Mangocake.html">Mango Cakes </a></li>
+    <li><a href="Mushroomcake.html">Mushroom Cakes </a></li>
+    <li><a href="Orangecake.html">Orange Cakes </a></li>
+    <li><a href="Pineapplecake.html">Pineapple Cakes </a></li>
+    <li><a href="Strawberrycake.html">Strawberry Cakes </a></li>
 </ul>
 </div>
         <a href="Wedding Cake.html">Wedding Cakes </a>
@@ -48,7 +47,7 @@
 
             <a href="Contact.html">Contact</a>
             <a href="About.html">About Us</a>
-            <a href="Blog.html">🛒</a>
+            <a href="Cart.html" class="active" style="position: relative;">🛒 <span id="cart-count">0</span></a>
         </div>
     </div>
     <div class="menu-toggle" id="mobile-menu">
@@ -58,23 +57,60 @@
     </div>
 
 </nav>
-    <!-- <div class="menu-toggle" onclick="toggleMenu()">☰</div> -->
-    
-</nav>
-<header class="header">
-    <div class="content">
-        <h1>Welcome to Sweet Love Bakery</h1>
-        <p>Delight your taste buds with our exquisite selection of birthday cakes and mini cakes!</p>
-        
+   
+ <section class="hero-section">
+    <div class="hero-content">
+        <span class="hero-subtitle">Premium Quality Cakes</span>
+        <h1>Delicious Moments in Every Bite</h1>
+        <p>Welcome to Sweet Love Bakery, where we bake with heart and the finest ingredients to make your celebrations extra special.</p>
+        <div class="hero-btns">
+            <a href="Weddingcake.html" class="btn-primary">View Wedding Cakes</a>
+            <a href="about.html" class="btn-secondary">Our Story</a>
+        </div>
     </div>
-</header>   
+    <div class="hero-image">
+        <img src="img\Wedding Cake.jpg" alt="Sweet Love Bakery Cake">
+    </div>
+</section>
+
+<section class="best-sellers-section">
+    <div class="section-title">
+        <h1>Our Best Sellers</h1>
+        <p>Most loved treats by our sweet customers</p>
+    </div>
+    <div class="cake-container">
+        <div class="cake-box">
+            <div class="image-wrapper">
+                <span class="tag">Popular</span>
+            <img src="img\Strawberry Cake2.jpg" alt="Strawberry Cake2"></div>
+            <h3>Coquette White Ribbon Cake</h3>
+            <p>50,000 Ks</p>
+            <button class="buy-btn" onclick="addToCart('Coquette White Ribbon Cake', 50000, 'img/Strawberry Cake2.jpg')">ADD TO CART</button>
+        </div>
+
+        <div class="cake-box">
+            <img src="img\Chocolate Cake7.jpg" alt="Chocolate Cake7">
+            <h3>Elegant Chocolate Bow Cake</h3>
+            <p>30,000 Ks</p>
+            <button class="buy-btn" onclick="addToCart('Elegant Chocolate Bow Cake', 30000, 'img/Chocolate Cake7.jpg')">ADD TO CART</button>
+        </div>
+
+        <div class="cake-box">
+            <img src="img/Green Cake5.jpg" alt="Green Cake5">
+            <h3>White Rose Gold-Dust Cake</h3>
+            <p>25,000 Ks</p>
+            <button class="buy-btn" onclick="addToCart('White Rose Gold-Dust Cake', 25000, 'img/Green Cake5.jpg')">ADD TO CART</button>
+        </div>
+    </div>
+</section>
+
     
 <section class="product-grid-section">
     <h2 class="section-title">MENU</h2>
     
 <div class="product-grid-container">
 
-    <a href="Blueberry Cake.html" class="card-link">
+    <a href="Blueberrycake.html" class="card-link">
         <div class="product-card">
             <div class="image-box"><img src="img/Blueberry Cake.jpg" alt="Blueberry Cake"></div>
             <h3>Blueberry Cake</h3>
@@ -90,7 +126,7 @@
         </div>
     </a>
         
-    <a href="Chocolate Cake.html" class="card-link">
+    <a href="Chocolatecake.html" class="card-link">
         <div class="product-card">
             <div class="image-box"><img src="img/Chocolate Cake.jpg" alt="Chocolate Cake"></div>
             <h3>Chocolate Cake</h3>
@@ -98,7 +134,7 @@
         </div>
     </a>
 
-    <a href="Green Cake.html" class="card-link">
+    <a href="Greencake.html" class="card-link">
         <div class="product-card">
             <div class="image-box"><img src="img/Green Cake.jpg" alt="Green Cake"></div>
             <h3>Green Cake</h3>
@@ -106,7 +142,7 @@
         </div>
     </a>
 
-    <a href="Mango Cake.html" class="card-link">
+    <a href="Mangocake.html" class="card-link">
         <div class="product-card">
             <div class="image-box"><img src="img/Mango Cake.jpg" alt="Mango Cake"></div>
             <h3>Mango Cake</h3>
@@ -114,7 +150,7 @@
         </div>
     </a>
 
-    <a href="Mushroom Cake.html" class="card-link">
+    <a href="Mushroomcake.html" class="card-link">
         <div class="product-card">
             <div class="image-box"><img src="img/Mushroom Cake.jpg" alt="Mushroom Cake"></div>
             <h3>Mushroom Cake</h3>
@@ -122,7 +158,7 @@
         </div>
     </a>
 
-    <a href="Orange Cake.html" class="card-link">
+    <a href="Orangecake.html" class="card-link">
        <div class="product-card">
             <div class="image-box"><img src="img/Orange Cake.jpg" alt="Orange Cake"></div>
             <h3>Orange Cake</h3>
@@ -130,7 +166,7 @@
         </div>
     </a>
 
-    <a href="Strawberry Cake.html" class="card-link">
+    <a href="Strawberrycake.html" class="card-link">
         <div class="product-card">
             <div class="image-box"><img src="img/Strawberry Cake.jpg" alt="Strawberry Cake"></div>
             <h3>Strawberry Cake</h3>
@@ -138,7 +174,7 @@
         </div>
     </a>
 
-    <a href="Pineapple Cake.html" class="card-link">
+    <a href="Pineapplecake.html" class="card-link">
         <div class="product-card">
             <div class="image-box"><img src="img/Pineapple Cake.jpg" alt="Pineapple Cake"></div>
             <h3>Pineapple Cake</h3>
@@ -159,11 +195,10 @@
             <h3>Quick Links</h3>
             <ul>
                <li><a href="index.html">Home</a></li>
-                <li><a href="Shop.html">Shop</a></li>
                 <li><a href="Order.html">Order</a></li>
                 <li><a href="About.html">About Us</a></li>
                 <li><a href="Contact.html">Contact</a></li>
-                <li><a href="Blog.html">Blog</a></li>
+                <li><a href="Cart.html">Cart</a></li>
             </ul>
         </div>
 
@@ -177,7 +212,7 @@
     </div>
     
     <div class="footer-bottom">
-        <p>&copy; © 2026 Group-3 Paradise. All rights reserved.</p>
+        <p>&copy; 2026 Group-3 Paradise. All rights reserved.</p>
     </div>
 </footer>
 <script>
@@ -195,6 +230,6 @@
 }
     
 </script>
-</script>
+<script src="cart.js"></script>
 </body>
 </html>
