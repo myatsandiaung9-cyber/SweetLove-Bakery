@@ -167,10 +167,12 @@
   list-style: none;
   top: 0;
   left: 100%; 
-  background: #f8a3bf; 
+  background: #f6d2dc; 
   padding: 10px 0;
   min-width: 200px;
+
 }
+
 .side-submenu li:hover {
     background: #ffe6f0;
 }
@@ -495,10 +497,11 @@
 }
 
 .section-title {
-    font-size: 32px;
     letter-spacing: 2px;
     margin-bottom: 40px;
-    color: #f281a7;
+    font-size: 28px;
+    color: #ff4d88;
+    font-family: 'Playfair Display', serif;
 }
 
 .product-grid-container {
@@ -677,6 +680,12 @@ border-radius:5px;
     margin-bottom: 15px;
     font-family: 'Georgia', serif;
 }
+.cake-info p {
+    color: #5f5c5c;
+    font-weight: bold;
+    font-size: 15px;
+    margin-bottom: 15px;
+}
 
 /* Add to Cart Button */
 .add-to-cart-button {
@@ -716,10 +725,9 @@ border-radius:5px;
     display: flex;
     align-items: center; /* Vertical center */
     justify-content: space-between; /* Horizontal spacing */
-    padding: 20px;
+    padding: 20px 0;
     border-bottom: 1px solid #eee;
     background: #fff;
-    max-width: 1000px; /* Limits width so it's not too stretched on big screens */
     margin: 30px 2px 0px 0px;    /* Centers the whole cart on the page */
 }
 
@@ -728,6 +736,7 @@ border-radius:5px;
     display: flex;
     align-items: center;
     gap: 20px; /* Space between image and text */
+    flex-direction: right;
 }
 
 .cart-item-img {
@@ -759,8 +768,10 @@ border-radius:5px;
 .item-actions {
     display: flex;
     align-items: center;
+    margin-left: 20px;
     gap: 30px; /* Space between plus/minus and trash icon */
 }
+
 
 .quantity-controls {
     display: flex;
@@ -802,6 +813,26 @@ border-radius:5px;
     .gallery-container {
         grid-template-columns: repeat(1, 1fr);
     }
+    .wedding-bg {
+    background-color: #fbcce1; 
+    background-image: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url('wedding-banner-bg.jpg'); 
+    background-size: cover;
+    background-position: center;
+    height: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+    .wedding-bg h1 {
+    background-color: #d63384;
+    color: white;
+    padding: 10px 40px;
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    box-shadow: 10px 10px 0px rgba(214, 51, 132, 0.2); 
+}
 }
 
 /* Accessories Header */
