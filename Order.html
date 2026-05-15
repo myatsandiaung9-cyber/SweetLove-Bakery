@@ -144,6 +144,30 @@
                 <span id="grand-total">Total Ks</span>
             </div>
 
+<div class="cart-summary">
+
+    <h2 class="summary-title">total</h2>
+
+    <div class="summary-top">
+        <span>product</span>
+        <span>total</span>
+    </div>
+
+    <!-- ITEMS WILL COME HERE -->
+    <div id="checkout-items"></div>
+
+    <!-- TOTALS -->
+    <div class="summary-row">
+        <span>Sub Total</span>
+        <span id="subtotal">0 ks</span>
+    </div>
+
+    <div class="summary-row grand-total">
+        <span>Grand Total</span>
+        <span id="grandtotal">0 ks</span>
+    </div>
+
+</div>
 </section>
     
     <footer class="footer">
@@ -190,6 +214,44 @@
     e.preventDefault();
     document.getElementById("shopItems").classList.toggle("show-dropdown");
 }
+const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+const checkoutItems = document.getElementById("checkout-items");
+
+let subtotal = 0;
+
+cart.forEach(item => {
+
+    subtotal += item.price * item.quantity;
+
+    checkoutItems.innerHTML += `
+
+        <div class="cart-item-summary">
+
+            <div class="cart-left">
+
+                <div class="cart-image">
+                    <img src="${item.image}" alt="">
+                </div>
+
+                <div class="cart-details">
+                    <h4>${item.name} × ${item.quantity}</h4>
+                    <p>${item.size}</p>
+                </div>
+
+            </div>
+
+            <div class="cart-price">
+                ${item.price * item.quantity} ks
+            </div>
+
+        </div>
+
+    `;
+});
+
+document.getElementById("subtotal").innerText = subtotal + " ks";
+document.getElementById("grandtotal").innerText = subtotal + " ks";
     
 </script>
 <script src="cart.js"></script>

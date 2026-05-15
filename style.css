@@ -591,13 +591,13 @@ border-radius:5px;
         grid-template-columns: repeat(1, 1fr);
     }
     .product-card h3 {
-    font-family: 'Calibri', cursive !important;
+    font-family: 'Calibri', cursive;
     font-size: 22px;
     color: #f1e9e9;
     margin: 8px 5px 5px;
 }
     .product-card p {
-    font-family: 'Calibri', cursive !important;
+    font-family: 'Calibri', cursive;
     font-size: 15px;
     color: #f1e9e9;
     margin: 8px 5px 5px;
@@ -685,6 +685,26 @@ border-radius:5px;
     font-weight: bold;
     font-size: 15px;
     margin-bottom: 15px;
+}
+    .wedding-bg {
+    background-color: #fbcce1; 
+    background-image: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url('wedding-banner-bg.jpg'); 
+    background-size: cover;
+    background-position: center;
+    height: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+    .wedding-bg h1 {
+    background-color: #d63384;
+    color: white;
+    padding: 10px 40px;
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    box-shadow: 10px 10px 0px rgba(214, 51, 132, 0.2); 
 }
 
 /* Add to Cart Button */
@@ -813,26 +833,6 @@ border-radius:5px;
     .gallery-container {
         grid-template-columns: repeat(1, 1fr);
     }
-    .wedding-bg {
-    background-color: #fbcce1; 
-    background-image: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url('wedding-banner-bg.jpg'); 
-    background-size: cover;
-    background-position: center;
-    height: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-    .wedding-bg h1 {
-    background-color: #d63384;
-    color: white;
-    padding: 10px 40px;
-    font-size: 20px;
-    font-weight: 900;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    box-shadow: 10px 10px 0px rgba(214, 51, 132, 0.2); 
-}
 }
 
 /* Accessories Header */

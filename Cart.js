@@ -53,7 +53,10 @@ function displayCart() {
 }
 
 // 4. Add to Cart (Used in Blueberrycake.html, etc.)
-window.addToCart = function(name, price, image) {
+window.addToCart = function(event,name, price, image) {
+    if(event){
+        event.preventDefault(); // Prevents any default action (like form submission)
+    }
     const existingItem = cart.find(item => item.name === name);
     if (existingItem) {
         existingItem.quantity += 1;
