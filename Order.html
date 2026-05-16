@@ -11,10 +11,10 @@
 <body>
    
 <nav class="navbar">
-    <div class="logo">
-       <img src="img/SweetLove-Logo.jpg" alt="Logo">
-    <span>Sweet Love Bakery</span>
-</div>
+    <a href="index.html" class="logo">
+   <img src="img/SweetLove-Logo.jpg" alt="Logo">
+   <span>Sweet Love Bakery</span>
+</a>
 
     <div class="nav-container">
        <div class="nav-links">
@@ -94,7 +94,6 @@
                         <input type="time" name="delivery_time" required>
                     </div>
                 </div>
-
                 <div class="payment-methods">
                     <h3>Payment Method</h3>
                     <div class="payment-options">
@@ -138,35 +137,11 @@
                 <span>Shipping Fee</span>
                 <span>Depends on Location</span>
             </div>
-            <hr>
+           <div id="checkout-items"></div>
             <div class="summary-total">
                 <span>Grand Total</span>
-                <span id="grand-total">Total Ks</span>
+                <span id="grand-total">0 Ks</span>
             </div>
-
-<div class="cart-summary">
-
-    <h2 class="summary-title">total</h2>
-
-    <div class="summary-top">
-        <span>product</span>
-        <span>total</span>
-    </div>
-
-    <!-- ITEMS WILL COME HERE -->
-    <div id="checkout-items"></div>
-
-    <!-- TOTALS -->
-    <div class="summary-row">
-        <span>Sub Total</span>
-        <span id="subtotal">0 ks</span>
-    </div>
-
-    <div class="summary-row grand-total">
-        <span>Grand Total</span>
-        <span id="grandtotal">0 ks</span>
-    </div>
-
 </div>
 </section>
     
@@ -214,45 +189,42 @@
     e.preventDefault();
     document.getElementById("shopItems").classList.toggle("show-dropdown");
 }
-const cart = JSON.parse(localStorage.getItem("cart")) || [];
+window.onload = function () {
+    const cart = JSON.parse(localStorage.getItem("bakery_cart")) || [];
+    const itemsBox = document.getElementById("checkout-items");
+    const subtotalBox = document.getElementById("subtotal");
+    const grandBox = document.getElementById("grand-total");
 
-const checkoutItems = document.getElementById("checkout-items");
+    let subtotal = 0;
 
-let subtotal = 0;
+    // safety check
+    if (itemsBox) {
+        itemsBox.innerHTML = "";
 
-cart.forEach(item => {
+        cart.forEach(item => {
 
-    subtotal += item.price * item.quantity;
+            let total = item.price * item.quantity;
+            subtotal += total;
 
-    checkoutItems.innerHTML += `
-
-        <div class="cart-item-summary">
-
-            <div class="cart-left">
-
-                <div class="cart-image">
-                    <img src="${item.image}" alt="">
+            itemsBox.innerHTML += `
+                <div class="cart-item-summary">
+                    <div class="cart-left">
+                        <img src="${item.image}" width="60">
+                        <div>
+<div class="item-line">
+    <span class="item-name">${item.name} × ${item.quantity}</span>
+    <span class="item-price">${item.price * item.quantity} Ks</span>
+</div>
+                        </div>
+                    </div>
                 </div>
+            `;
+        });
+    }
 
-                <div class="cart-details">
-                    <h4>${item.name} × ${item.quantity}</h4>
-                    <p>${item.size}</p>
-                </div>
-
-            </div>
-
-            <div class="cart-price">
-                ${item.price * item.quantity} ks
-            </div>
-
-        </div>
-
-    `;
-});
-
-document.getElementById("subtotal").innerText = subtotal + " ks";
-document.getElementById("grandtotal").innerText = subtotal + " ks";
-    
+    if (subtotalBox) subtotalBox.innerText = subtotal + " Ks";
+    if (grandBox) grandBox.innerText = subtotal + " Ks";
+};
 </script>
 <script src="cart.js"></script>
 </body>

@@ -67,8 +67,8 @@
     </div> 
     
     <div class="cart-summary">
-        <h3>Total: $<span id="cart-total">0.00</span></h3>
-        <a href="order.html" class="checkout-btn">PROCEED TO ORDER</a>
+        <h3>Total: <span id="cart-total">0 Ks</span></h3>
+        <a href="Order.html" class="checkout-btn">PROCEED TO ORDER</a>
     </div>
 </div>
     
@@ -104,9 +104,7 @@
     </div>
 </footer>
 <script src="cart.js"></script>
-
 <script>
-   
     window.onload = function() {
         if (typeof displayCart === "function") {
             displayCart();
@@ -125,6 +123,5 @@
     document.getElementById("shopItems").classList.toggle("show-dropdown");
 }
 </script>
-<script src="cart.js"></script>
 </body>
 </html>
