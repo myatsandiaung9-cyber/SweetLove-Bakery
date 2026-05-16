@@ -84,11 +84,12 @@ window.updateQuantity = function(index, change) {
      displayCart();
  };
 
-// // RUN ON LOAD
-// document.addEventListener('DOMContentLoaded', () => {
-//     displayCart(); // Handles both the cart list and the global badge
-//     updateGlobalBadge(); // Secondary check to ensure badge fills on every page load
-// });
+ // RUN ON LOAD
+ // document.addEventListener('DOMContentLoaded', () => {
+   //  displayCart(); // Handles both the cart list and the global badge
+    // updateGlobalBadge(); // Secondary check to ensure badge fills on every page load */
+ //});
+ 
 // Cart.js ရဲ့ အပေါ်ဆုံးမှာ ဒါကို အရင်ဆုံး ကြေညာပါ
 let cart = JSON.parse(localStorage.getItem('bakery_cart')) || [];
 
