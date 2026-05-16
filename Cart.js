@@ -33,7 +33,7 @@ function displayCart() {
                          <img src="${item.image}" alt="${item.name}" class="cart-item-img">
                          <div class="item-text">
                              <h4 class="item-name">${item.name}</h4>
-                             <p class="item-price">${item.price} Ks</p>
+                             <p class="item-price">$${item.price}</p>
                          </div>
                      </div>
                      <div class="item-actions">
