@@ -94,6 +94,7 @@
                         <input type="time" name="delivery_time" required>
                     </div>
                 </div>
+
                 <div class="payment-methods">
                     <h3>Payment Method</h3>
                     <div class="payment-options">
@@ -191,6 +192,7 @@
 }
 window.onload = function () {
     const cart = JSON.parse(localStorage.getItem("bakery_cart")) || [];
+
     const itemsBox = document.getElementById("checkout-items");
     const subtotalBox = document.getElementById("subtotal");
     const grandBox = document.getElementById("grand-total");
