@@ -33,7 +33,7 @@ function displayCart() {
                          <img src="${item.image}" alt="${item.name}" class="cart-item-img">
                          <div class="item-text">
                              <h4 class="item-name">${item.name}</h4>
-                             <p class="item-price">$${item.price}</p>
+                             <p class="item-price">${item.price}Ks</p>
                          </div>
                      </div>
                      <div class="item-actions">
@@ -85,10 +85,10 @@ window.updateQuantity = function(index, change) {
  };
 
  // RUN ON LOAD
-  document.addEventListener('DOMContentLoaded', () => {
+  /* document.addEventListener('DOMContentLoaded', () => {
      displayCart(); // Handles both the cart list and the global badge
-     updateGlobalBadge(); // Secondary check to ensure badge fills on every page load */
- });
+     updateGlobalBadge(); // Secondary check to ensure badge fills on every page load 
+ }); */
  
 // Cart.js ရဲ့ အပေါ်ဆုံးမှာ ဒါကို အရင်ဆုံး ကြေညာပါ
 let cart = JSON.parse(localStorage.getItem('bakery_cart')) || [];
