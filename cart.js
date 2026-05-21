@@ -104,3 +104,14 @@ document.addEventListener('DOMContentLoaded', () => {
     displayCart();
     updateGlobalBadge();
 });
+// dropbtn မရှိတဲ့ စာမျက်နှာတွေမှာ Error ကျော်သွားအောင် ဖိုင်ရဲ့အောက်ဆုံးမှာ ဒါလေး ထည့်ပေးလိုက်တာပါ
+document.addEventListener('DOMContentLoaded', () => {
+    const dropBtn = document.querySelector(".dropbtn");
+    if (dropBtn) {
+        dropBtn.addEventListener("click", function(e){
+            e.preventDefault();
+            const dropContent = document.querySelector(".dropdown-content");
+            if (dropContent) dropContent.classList.toggle("show");
+        });
+    }
+});
