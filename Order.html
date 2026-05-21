@@ -65,7 +65,7 @@
         <div class="billing-details">
             <h2>Billing Address</h2>
             <form action="https://formspree.io/f/xdajgdol" method="POST" id="bakeryOrderForm">
-                
+               <input type="hidden" name="Order_Details" id="orderData"> 
                 <div class="form-row">
                     <div class="form-group">
                         <label>Name</label>
@@ -225,6 +225,17 @@ window.onload = function () {
     if (subtotalBox) subtotalBox.innerText = subtotal + " Ks";
     if (grandBox) grandBox.innerText = subtotal + " Ks";
 };
+document.getElementById('bakeryOrderForm').addEventListener('submit', function(e) {
+    const cart = JSON.parse(localStorage.getItem("bakery_cart")) || [];
+    
+   
+    const orderDataInput = document.getElementById('orderData');
+    if (orderDataInput) {
+        orderDataInput.value = JSON.stringify(cart);
+    }
+    
+    localStorage.removeItem('bakery_cart');
+});
 </script>
 <script src="cart.js"defer></script>
 </body>

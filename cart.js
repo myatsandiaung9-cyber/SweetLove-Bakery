@@ -1,5 +1,5 @@
 
-// ၁။ Cart Data ကို တစ်နေရာတည်းမှာပဲ တစ်ခါတည်း ကြေညာရပါမယ် (ထပ်လို့မရပါ)
+// ၁။ Cart Data ကို တည်ဆည်းထားမယ့် Variable
 let cart = JSON.parse(localStorage.getItem('bakery_cart')) || [];
 
 // ၂။ Badge အရေအတွက်ပြတဲ့ Function
@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
     displayCart();
     updateGlobalBadge();
 });
-// dropbtn မရှိတဲ့ စာမျက်နှာတွေမှာ Error ကျော်သွားအောင် ဖိုင်ရဲ့အောက်ဆုံးမှာ ဒါလေး ထည့်ပေးလိုက်တာပါ
+// dropbtn မရှိတဲ့ စာမျက်နှာတွေမှာ Error ကျော်သွားအောင် 
 document.addEventListener('DOMContentLoaded', () => {
     const dropBtn = document.querySelector(".dropbtn");
     if (dropBtn) {
