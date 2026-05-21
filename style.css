@@ -592,15 +592,11 @@ border-radius:5px;
     }
     .product-card h3 {
     font-family: 'Calibri', cursive;
-    font-size: 22px;
-    color: #f1e9e9;
-    margin: 8px 5px 5px;
+    
 }
     .product-card p {
     font-family: 'Calibri', cursive;
-    font-size: 15px;
-    color: #f1e9e9;
-    margin: 8px 5px 5px;
+   
 }
 }
 
@@ -993,19 +989,25 @@ border-radius:5px;
     }
 }
 /* Logo*/
+.team-section {
+    background-color:#fffffad3;
+}
 .team-logo-container {
     text-align: center;
 }
 .team-logo-container h2{
-    font-size: 20px;
-    color: #5f6164;
-     margin-bottom: 20px;
+    font-size: 30px;
+    color: rgb(9, 137, 114);
+     margin-bottom: 30px;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 .team-main-logo {
-    width: 150px; /* Logo size*/
-    height: auto; 
+    width: 130px; /* Logo size*/
+    height: auto;
+    margin-top: 20px; 
     margin-bottom: 10px;
+    border-radius: 50%;
+    border: solid 3px rgb(105, 171, 159);
 }
 
 /* Team Member Grid  */
@@ -1018,7 +1020,7 @@ border-radius:5px;
 }
 .team-grid h3 {
     font-size: 15px;
-    color: #484647;
+    color:rgb(9, 137, 114);;
     margin-bottom: 5px;
     font-family: 'Georgia', serif;
 }
