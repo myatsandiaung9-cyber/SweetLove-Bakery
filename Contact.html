@@ -68,23 +68,19 @@
         
         <div class="contact-form-side">
             <h2 class="form-title">have a specific request or question?</h2>
-            <form>
-                <div class="input-row">
-                    <input type="text" placeholder="NAME*" required>
-                    <input type="text" placeholder="SURNAME*" required>
-                </div>
-                <input type="email" placeholder="EMAIL ADDRESS*" required>
-                <input type="text" placeholder="CONTACT NUMBER">
-                <input type="text" placeholder="SUBJECT*">
-                <textarea placeholder="YOUR MESSAGE*" rows="5"></textarea>
-                
-                <div class="check-box-group">
-                    <input type="checkbox" id="terms">
-                    <label for="terms">I agree to receiving marketing email and understand the terms and conditions.</label>
-                </div>
-                
-                <button type="submit" class="black-submit-btn">submit</button>
-            </form>
+        
+           <form action="https://formspree.io/f/xpqnrqgd" method="POST" id="contactForm">
+    <div class="input-row">
+        <input type="text" name="first name" placeholder="NAME*" required>
+        <input type="text" name="surname" placeholder="SURNAME*" required>
+    </div>
+    <input type="email" name="email" placeholder="EMAIL ADDRESS*" required>
+    <input type="text" name="phone" placeholder="CONTACT NUMBER">
+    <input type="text" name="_subject" placeholder="SUBJECT*">
+    <textarea name="message" placeholder="YOUR MESSAGE*" rows="5"></textarea>
+    
+    <button type="submit" class="black-submit-btn">SUBMIT</button>
+</form>
         </div>
 
         <div class="contact-info-side">
